@@ -46,7 +46,8 @@ class EventsController < ApplicationController
   end
 
   def destroy
-    
+    @event.destroy
+    redirect_to events_url, status: :see_other, alert: "#{@event.name} is deleted!"
   end
 
   private
